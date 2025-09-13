@@ -1,0 +1,34 @@
+
+.footer {
+    background: white;
+    padding: 3rem 0;
+    text-align: center;
+  }
+  
+  .footerContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  
+  .socialLinks {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .socialLinks a {
+    color: var(--text-light);
+    transition: all 0.3s ease;
+  }
+  
+  .socialLinks a:hover {
+    color: var(--accent);
+    transform: translateY(-3px);
+  }

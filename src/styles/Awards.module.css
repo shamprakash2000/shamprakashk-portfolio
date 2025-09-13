@@ -1,0 +1,41 @@
+.awards {
+    background-color: white;
+  }
+
+  .awards h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  }
+  
+  .awardsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .awardCard {
+    padding: 1.5rem;
+    text-align: center;
+    height: 100%;
+    background: #fff;               /* white background for shadow visibility */
+  border-radius: 12px;            /* curved corners */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  }
+  
+  .awardIcon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .awardEvent {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .awardsGrid {
+      grid-template-columns: 1fr;
+    }
+  }

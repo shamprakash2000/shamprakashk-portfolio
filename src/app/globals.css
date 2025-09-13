@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  /* font-family: Arial, Helvetica, sans-serif; */
+  @apply bg-background text-primary;
+
+    font-family: "Poppins", sans-serif;
+  
+}
+/* If using Tailwind, add these custom classes */
+.bg-light {
+  background-color: #F5F5F5; /* Light Background for Header & Hero */
+}
+
+.bg-dark {
+  background-color: #EAEAEA; /* Darker Background for Bottom Sections */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  /* --accent: #6c63ff; */
+  /* --primary: #f0f4f8; */
+  --secondary: #dbe4ee;
+  --text: #2d3748;
+  --text-light: #718096;
+  --shadow: rgba(0, 0, 0, 0.05);
+}
+
+body {
+  background-color: var(--primary);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+h1, h2, h3 {
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px var(--shadow);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 0;
+  }
+}
+.text-justify {
+  text-align: justify;
+}
+.large-text {
+  display: block;
+}
+
+.small-text {
+  display: none;
+}
+.xs-text {
+  display: none;
+}
+@media (max-width: 600px) {
+  .large-text {
+    display: none;
+  }
+
+  .small-text {
+    display: block;
+  }
+  .xs-text {
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+  .large-text {
+    display: none;
+  }
+
+  .small-text {
+    display: none;
+  }
+  .xs-text {
+    display: block;
+  }
+}
+.social-icons {
+  position: fixed;
+  top: 50%; /* Ensures the icons are vertically centered */
+  right: 30px; /* You can adjust this for spacing from the right */
+  transform: translateY(-50%); /* Vertically center the icons */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 50; /* Make sure it stays on top of other content */
+}
+@media (max-width: 768px) {
+  .social-icons {
+    right: 20px; /* Space for mobile */
+    top: auto;
+    transform: translateY(0);
+  }
+}
+.content {
+  width: 75%; /* Or adjust it as needed */
+  margin-right: 100px; /* Ensures space for social icons */
+}

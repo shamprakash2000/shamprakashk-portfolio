@@ -1,0 +1,22 @@
+.about {
+    background-color: white;
+  }
+  
+  .aboutContent {
+    display: flex;
+    gap: 3rem;
+  }
+  
+  .aboutText {
+    flex: 2;
+  }
+  
+  .aboutText p {
+    margin-bottom: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .aboutContent {
+      flex-direction: column;
+    }
+  }

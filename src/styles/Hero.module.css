@@ -1,0 +1,70 @@
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 70px;
+  }
+  
+  .heroContent {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  
+  .heroText {
+    flex: 1;
+  }
+  
+  .heroText h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .heroImage {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .profileImageContainer {
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid white;
+    box-shadow: 0 10px 20px var(--shadow);
+  }
+  
+  .socialLinks {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .socialLinks a {
+    color: var(--text-light);
+    transition: all 0.3s ease;
+  }
+  
+  .socialLinks a:hover {
+    color: var(--accent);
+    transform: translateY(-3px);
+  }
+  
+  .ctaButton {
+    margin-top: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .heroContent {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+  
+    .socialLinks {
+      justify-content: center;
+    }
+  
+    .heroText h1 {
+      font-size: 2.5rem;
+    }
+  }

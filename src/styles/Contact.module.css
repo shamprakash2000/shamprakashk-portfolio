@@ -1,0 +1,39 @@
+.contact {
+    background-color: var(--primary);
+  }
+  
+  .contactForm {
+    max-width: 600px;
+    margin: 2rem auto 0;
+  }
+  
+  .formGroup {
+    margin-bottom: 1.5rem;
+  }
+  
+  .formGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .formControl {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--secondary);
+    border-radius: 4px;
+    background: white;
+    font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  textarea.formControl {
+    min-height: 150px;
+    resize: vertical;
+  }
+  
+  .formControl:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2);
+  }
