@@ -54,6 +54,24 @@
     margin-top: 2rem;
   }
   
+.ctaButton {
+  background-color: black;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px; /* fully rounded */
+  font-weight: 500;
+  font-size: 1rem;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: black; /* ensures background stays black */
+  color: white;            /* ensures text stays white */
+  transform: scale(1.05);  /* slight elevation effect */
+}
+
+
   @media (max-width: 768px) {
     .heroContent {
       flex-direction: column-reverse;

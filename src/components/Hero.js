@@ -13,7 +13,7 @@ export default function Hero() {
   );
 
   return (
-    <section className="bg-[#F5F5F5] py-20 md:py-28 relative">
+    <section className="bg-teal-50 py-20 md:py-28 relative">
       <div className="container mx-auto flex flex-col md:flex-row items-center px-6 md:px-12 lg:px-20 relative">
         
         {/* Profile Image */}
@@ -50,14 +50,25 @@ export default function Hero() {
             <Link
               href={data.socialLinks.sendMail}
                target="_blank" rel="noopener noreferrer"
-              className="bg-black text-white py-3 px-8 rounded-full text-base font-medium hover:bg-gray-800 transition-all shadow-md"
-            >
+              className="border border-black  text-black py-3 px-8 rounded-full text-base font-medium hover:scale-105 transition-all shadow-md hover:bg-black hover:!text-white"
+  >
               Get in touch
             </Link>
+
+  {/* <a
+  href={data.socialLinks.sendMail}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-black border border-black  py-3 px-8 rounded-full text-base font-medium 
+             hover:scale-105 transition-transform 
+             shadow-md hover:shadow-lg"
+>
+  Get in touch
+</a> */}
             <Link
               href={data.resume}
                target="_blank" rel="noopener noreferrer"
-              className="border border-black text-black py-3 px-8 rounded-full text-base font-medium hover:bg-gray-200 transition-all shadow-md"
+              className="border border-black text-black py-3 px-8 hover:scale-105 rounded-full text-base font-medium hover:bg-black hover:!text-white transition-all shadow-md"
             >
               Resume
             </Link>
@@ -73,7 +84,7 @@ export default function Hero() {
             <FaLinkedin className="text-gray-700 hover:text-blue-600 text-2xl transition-all" />
           </Link>
           <div onClick={CopyEmailClick} target="_blank">
-            <SiGmail className="text-gray-700 hover:text-blue-400 text-2xl transition-all" />
+            <SiGmail className="text-gray-700 hover:text-red-400 text-2xl transition-all" />
           </div>
         </div>
       </div>

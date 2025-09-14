@@ -9,7 +9,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-light sticky top-0 z-50 shadow-sm">
+    <header className="bg-teal-100 sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
         
         <div className="flex items-center space-x-6">
@@ -22,12 +22,13 @@ export default function Header() {
           />
 
         
-          <nav className="hidden md:flex space-x-8 text-gray-700 text-lg font-semibold">
+          <nav className="hidden md:flex space-x-8 text-gray-900 text-lg font-semibold">
             {data.navigation.map((nav, index) => (
               <Link
                 key={index}
                 href={nav.link}
-                className="hover:text-black transition-all"
+                className="relative px-2 py-1 hover:text-black transition-all duration-300
+                 hover:translate-y-[-2px] hover:shadow-md hover:scale-105"
               >
                 {nav.section}
               </Link>
