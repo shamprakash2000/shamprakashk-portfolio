@@ -54,17 +54,6 @@ export default function Hero() {
   >
               Get in touch
             </Link>
-
-  {/* <a
-  href={data.socialLinks.sendMail}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="text-black border border-black  py-3 px-8 rounded-full text-base font-medium 
-             hover:scale-105 transition-transform 
-             shadow-md hover:shadow-lg"
->
-  Get in touch
-</a> */}
             <Link
               href={data.resume}
                target="_blank" rel="noopener noreferrer"

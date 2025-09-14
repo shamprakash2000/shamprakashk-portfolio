@@ -30,7 +30,7 @@ const data = {
     "location": "Kasaragod, India",
     "time": "Java",
     "image":image_profile,
-    "resume":"https://drive.google.com/file/d/1jQQxd7tD10jbmNo6nK7yYe1F0XZMjGgv/view?usp=sharing",
+    "resume":"https://drive.google.com/file/d/1vrUXj1K2Gnh9CrvJJF68hbaLvkXKGGwA/view?usp=sharing",
       "navigation": [
         { "section": "Home", "link": "#home" },
         { "section": "Skills", "link": "#skills" },
