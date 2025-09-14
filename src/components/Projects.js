@@ -11,13 +11,6 @@ export default function Projects() {
         <div className={styles.projectsGrid}>
           {data.projects.map((project, index) => (
             <div key={index} className={`${styles.card} ${styles.projectCard}`}>
-              <a 
-    key={index} 
-    href={project.code} 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className={styles.cardLink}
-  >
               <div className={styles.projectImageContainer}>
               <Image
                 src={project.image}
@@ -42,7 +35,6 @@ export default function Projects() {
                   {project.code && (<a href={project.code} target="_blank" rel="noopener noreferrer" className={styles.certLink}>View Code</a>)}
                 </div>
               </div>
-              </a>
             </div>
           ))}
           

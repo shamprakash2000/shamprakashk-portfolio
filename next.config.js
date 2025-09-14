@@ -5,8 +5,8 @@ const nextConfig = {
   images: {
     unoptimized: true, // Disable image optimization
   },
-  basePath: "/shamprakashk-portfolio", // replace <repo-name> with your GitHub repo name
-  assetPrefix: "/shamprakashk-portfolio",
+  // basePath: "/shamprakashk-portfolio", // replace <repo-name> with your GitHub repo name
+  // assetPrefix: "/shamprakashk-portfolio",
 };
 
 module.exports = nextConfig;
