@@ -19,6 +19,8 @@ import {
   import reward from "../../public/images/reward.jpg"
   import farmland from "../../public/images/farmland.jpg"
   import image_profile from "../../public/images/Sham Prakash K.png"
+  import apollo from "../../public/images/apollo.png"
+  import gcp from "../../public/images/gcp.png"
   
 const data = {
     "name": "Sham Prakash K",
@@ -196,25 +198,29 @@ const data = {
     "title": "Google Cloud Professional Cloud DevOps Engineer",
     "organization": "Google Cloud",
     "date": "May 2025",
-    "link": "https://drive.google.com/file/d/1XG5CeDykDxp8CCrVag4HEd_KiFrX5KkI/view?usp=sharing"
+    "link": "https://drive.google.com/file/d/1XG5CeDykDxp8CCrVag4HEd_KiFrX5KkI/view?usp=sharing",
+    "logo": gcp
   },
   {
     "title": "Apollo GraphQL Developer Associate",
     "organization": "Apollo",
     "date": "March 2025",
-    "link": "https://drive.google.com/file/d/1YrlfPbS71ABLhbH-2zniu4rXIulkK-Cu/view?usp=sharing"
+    "link": "https://drive.google.com/file/d/1YrlfPbS71ABLhbH-2zniu4rXIulkK-Cu/view?usp=sharing",
+    "logo": apollo
   },
   {
     "title": "Google Cloud Professional Cloud Developer",
     "organization": "Google Cloud",
     "date": "March 2024",
-    "link": "https://drive.google.com/file/d/1eejVLcqou0MM-KH5pGOwq0ttwB-k7fAS/view?usp=sharing"
+    "link": "https://drive.google.com/file/d/1eejVLcqou0MM-KH5pGOwq0ttwB-k7fAS/view?usp=sharing",
+    "logo": gcp
   },
    {
     "title": "Google Cloud Associate Cloud Engineer",
     "organization": "Google Cloud",
     "date": "April 2023",
-    "link": "https://drive.google.com/file/d/1vixxFS6aXwCnXrXa9SIvNzbxSawRSGBc/view?usp=sharing"
+    "link": "https://drive.google.com/file/d/1vixxFS6aXwCnXrXa9SIvNzbxSawRSGBc/view?usp=sharing",
+    "logo": gcp
   }
   
 ]
