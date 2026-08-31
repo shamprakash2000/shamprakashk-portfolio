@@ -1,81 +1,184 @@
 "use client";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
-import data from "@/data/data"; 
+import data from "@/data/data";
+import styles from "../styles/Hero.module.css";
 
+const ROLES = [
+  "Backend Engineer",
+  "Java · Spring Boot",
+  "GraphQL & REST APIs",
+  "Distributed Systems",
+];
 
 export default function Hero() {
+  const [copied, setCopied] = useState(false);
+  const [roleIdx, setRoleIdx] = useState(0);
+  const [roleFade, setRoleFade] = useState(true);
 
-  const CopyEmailClick = () => (
-    navigator.clipboard.writeText(data.socialLinks.gmail).then(() => alert('Shamprakash200@gmail.com email copied to clipboard!'))
-  );
+  const copyEmail = () => {
+    navigator.clipboard.writeText(data.socialLinks.gmail).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2200);
+    });
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRoleFade(false);
+      setTimeout(() => {
+        setRoleIdx((i) => (i + 1) % ROLES.length);
+        setRoleFade(true);
+      }, 300);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const langSkills = data.skills.filter((s) => s.category === "Languages");
+  const fwSkills = data.skills.filter((s) => s.category === "Frameworks");
 
   return (
-    <section className="bg-teal-50 py-20 md:py-28 relative">
-      <div className="container mx-auto flex flex-col md:flex-row items-center px-6 md:px-12 lg:px-20 relative">
-        
-        {/* Profile Image */}
-        <div className="flex flex-col items-center md:items-start">
-            <div className="w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 aspect-square rounded-full overflow-hidden bg-[#F5F5F5] flex items-center justify-center">
+    <section id="home" className={styles.hero}>
+      <div className={styles.bg}>
+        <div className={styles.orb1} />
+        <div className={styles.orb2} />
+        <div className={styles.grid} />
+      </div>
+
+      <div className={`${styles.container} container`}>
+        {/* Top row: text + photo */}
+        <div className={styles.heroRow}>
+          <div className={styles.content}>
+            <div className={styles.badge}>
+              <span className={styles.badgeDot} />
+              Open to new opportunities
+            </div>
+
+            <h1 className={styles.name}>{data.name}</h1>
+            <p className={styles.role} style={{ opacity: roleFade ? 1 : 0, transition: "opacity 0.3s ease" }}>
+              {ROLES[roleIdx]}
+            </p>
+            <p className={styles.bio}>{data.heroBio}</p>
+
+            <div className={styles.ctas}>
+              <Link
+                href={data.socialLinks.sendMail}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.btnPrimary}
+              >
+                Get in touch
+              </Link>
+              <Link
+                href={data.resume}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.btnOutline}
+              >
+                View Resume
+              </Link>
+            </div>
+
+            <div className={styles.socials}>
+              <Link
+                href={data.socialLinks.github}
+                target="_blank"
+                className={styles.socialLink}
+                aria-label="GitHub"
+              >
+                <FaGithub />
+              </Link>
+              <Link
+                href={data.socialLinks.linkedin}
+                target="_blank"
+                className={styles.socialLink}
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin />
+              </Link>
+              <button
+                onClick={copyEmail}
+                className={styles.socialLink}
+                aria-label="Copy email"
+              >
+                <SiGmail />
+              </button>
+            </div>
+          </div>
+
+          <div className={styles.imageWrapper}>
+            <div className={styles.imageRing} />
+            <div className={styles.imageInner}>
               <Image
                 src={data.image}
-                alt="Profile Picture"
-                width={402}
-                height={402}
-                className="object-cover object-center w-full h-full rounded-full scale-105"
+                alt={data.name}
+                width={340}
+                height={340}
+                className={styles.profileImage}
                 priority
               />
+            </div>
           </div>
         </div>
 
-        {/* Description */}
-        <div className="mt-8 md:mt-0 md:ml-16 lg:ml-20 text-center md:text-left">
-          <h1 className="text-2xl md:text-4xl font-semibold text-gray-900">
-            {data.name}
-          </h1>
-          <p className="large-text text-justify text-gray-600 max-w-xl leading-relaxed text-lg mt-2">
-            {data.about_full}
-          </p>
-          <p className="small-text text-justify text-gray-600 max-w-xl leading-relaxed text-lg mt-2">
-            {data.about_short}
-          </p>
-          <p className="xs-text text-justify text-gray-600 max-w-xl leading-relaxed text-lg mt-2">
-            {data.about_short}
-          </p>
+        {/* Bottom row: skills + experience preview cards */}
+        <div className={styles.previewRow}>
+          {/* Skills card */}
+          <div className={styles.previewCard}>
+            <p className={styles.previewLabel}>Languages</p>
+            <div className={styles.pillRow}>
+              {langSkills.map((s, i) => (
+                <span key={i} className={styles.pill}>
+                  <span className={styles.pillIcon}>{s.icon}</span>
+                  {s.name}
+                </span>
+              ))}
+            </div>
+            <p className={styles.previewLabel} style={{ marginTop: "0.85rem" }}>Frameworks</p>
+            <div className={styles.pillRow}>
+              {fwSkills.map((s, i) => (
+                <span key={i} className={styles.pill}>
+                  <span className={styles.pillIcon}>{s.icon}</span>
+                  {s.name}
+                </span>
+              ))}
+            </div>
+          </div>
 
-          {/* Call to Action Buttons */}
-          <div className="content mt-6 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
-            <Link
-              href={data.socialLinks.sendMail}
-               target="_blank" rel="noopener noreferrer"
-              className="border border-black  text-black py-3 px-8 rounded-full text-base font-medium hover:scale-105 transition-all shadow-md hover:bg-black hover:!text-white"
-  >
-              Get in touch
-            </Link>
-            <Link
-              href={data.resume}
-               target="_blank" rel="noopener noreferrer"
-              className="border border-black text-black py-3 px-8 hover:scale-105 rounded-full text-base font-medium hover:bg-black hover:!text-white transition-all shadow-md"
-            >
-              Resume
-            </Link>
+          {/* Experience card */}
+          <div className={styles.previewCardExp}>
+            {data.workExperience.slice(0, 2).map((job, i) => (
+              <div key={i}>
+                <div className={styles.expNameRow}>
+                  <p className={styles.expCompany}>{job.shortName ?? job.company}</p>
+                  {job.current ? (
+                    <span className={styles.currentBadge}>Current</span>
+                  ) : (
+                    <span className={styles.periodBadge}>{job.period.split("–")[1]?.trim() ?? ""}</span>
+                  )}
+                </div>
+                <p className={styles.expTitle}>{job.title}</p>
+              </div>
+            ))}
           </div>
         </div>
+      </div>
 
-        {/* Social Icons */}
-        <div className="social-icons fixed right-8 top-1/2 transform -translate-y-1/2 flex flex-col space-y-4">
-          <Link href={data.socialLinks.github} target="_blank">
-            <FaGithub className="text-gray-700 hover:text-black text-2xl transition-all" />
-          </Link>
-          <Link href={data.socialLinks.linkedin} target="_blank">
-            <FaLinkedin className="text-gray-700 hover:text-blue-600 text-2xl transition-all" />
-          </Link>
-          <div onClick={CopyEmailClick} target="_blank">
-            <SiGmail className="text-gray-700 hover:text-red-400 text-2xl transition-all" />
-          </div>
-        </div>
+      <a href="#about" className={styles.scrollDown} aria-label="Scroll down">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 5v14M5 12l7 7 7-7" />
+        </svg>
+      </a>
+
+      {/* Email copied toast */}
+      <div className={`${styles.toast} ${copied ? styles.toastVisible : ""}`}>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+        Email copied!
       </div>
     </section>
   );

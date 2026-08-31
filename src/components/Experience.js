@@ -1,31 +1,45 @@
 import styles from "../styles/Experience.module.css";
 import data from "@/data/data";
-export default function Experience() {
+import ScrollReveal from "./ScrollReveal";
 
+export default function Experience() {
   return (
     <section id="experience" className={styles.experience}>
-      <div className={`${styles.container} container mx-auto`}>
-        <h2>Experience</h2>
+      <div className={`${styles.container} container`}>
+        <ScrollReveal>
+          <h2 className="section-title">Experience</h2>
+        </ScrollReveal>
         <div className={styles.timeline}>
           {data.workExperience.map((exp, index) => (
-            <div key={index} className={styles.timelineItem}>
-              <div className={styles.timelineContent}>
-                    <h3>{exp.title}</h3>
-                    <span className={styles.timelineDate}>{exp.period}</span>
-                    
-                    <p className={styles.company}>{exp.company}</p>
-                    <ul className="list-disc pl-5 space-y-1">
-                      {exp.items && exp.items.length > 0 ? (
-                        exp.items.map((item, idx) => (
-                          <li key={idx}>{item}</li>
-                        ))
-                      ) : (
-                        <li>No items listed.</li>
+            <ScrollReveal key={index} delay={index * 120}>
+              <div className={styles.item}>
+                <div className={styles.dot} />
+                <div className={styles.card}>
+                  <div className={styles.cardHeader}>
+                    <div className={styles.headerLeft}>
+                      <h3 className={styles.title}>{exp.title}</h3>
+                      <p className={styles.company}>
+                        {exp.company}
+                        <span className={styles.location}> · {exp.location}</span>
+                      </p>
+                    </div>
+                    <div className={styles.headerRight}>
+                      <span className={styles.period}>{exp.period}</span>
+                      {exp.current && (
+                        <span className={styles.currentBadge}>Current</span>
                       )}
-                    </ul>
-
+                    </div>
+                  </div>
+                  <ul className={styles.items}>
+                    {exp.items.map((item, i) => (
+                      <li key={i} className={styles.listItem}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
