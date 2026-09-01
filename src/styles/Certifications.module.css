@@ -1,99 +1,147 @@
 .certifications {
-  background-color: white;
-  padding: 2rem 0;
+  background: var(--bg);
 }
 
-.certifications h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  /* margin-top: 3rem; */
-  margin-bottom: 2rem;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-.certGrid {
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
 }
 
-.certCard {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+.card {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
 }
 
-.certHeader h3 {
-  font-size: 1.1rem;
+.card:hover {
+  border-color: rgba(200, 241, 53, 0.25);
+  box-shadow: 0 6px 28px rgba(200, 241, 53, 0.06);
+  transform: translateY(-3px);
+}
+
+.logoWrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 6px;
+}
+
+.logoImage {
+  width: 36px !important;
+  height: 36px !important;
+  object-fit: contain;
+}
+
+.body {
+  flex: 1;
+  min-width: 0;
+}
+
+.titleRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 0.9rem;
   font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.levelBadge {
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.14rem 0.45rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.levelPro {
+  background: rgba(200, 241, 53, 0.12);
+  border: 1px solid rgba(200, 241, 53, 0.3);
+  color: #c8f135;
+}
+
+.levelAssoc {
+  background: rgba(96, 165, 250, 0.1);
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  color: #60a5fa;
 }
 
 .org {
-  color: var(--text-light);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  color: #c8f135;
+  font-weight: 500;
+  margin-bottom: 0.18rem;
 }
 
 .date {
-  margin: 0.5rem 0;
-  font-size: 0.85rem;
-  color: gray;
+  font-size: 0.75rem;
+  color: var(--text-3);
 }
 
-.certLink {
-  margin-top: auto;
-  font-size: 0.9rem;
-  color: var(--accent);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.certLink:hover {
-  text-decoration: underline;
-}
-
-.certLogo {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  margin-right: 0.5rem;
-}
-
-.certCard {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+.viewLink {
   display: flex;
-  flex-direction: column;
-  gap: 1rem; /* space between rows */
-}
-
-.certTitle {
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.certInfoRow {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
-}
-
-.certInfo {
-  display: flex;
-  flex-direction: column;
   gap: 0.3rem;
+  font-size: 0.775rem;
+  font-weight: 500;
+  color: var(--text-3);
+  border: 1px solid var(--border);
+  background: transparent;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.certLogo {
-  width: 60px;
-  height: 60px;
-  /* object-fit: contain; */
-   object-fit: cover; /* ensures the image covers the circle without stretching */
-  border-radius: 50%; /* makes it round */
-  border: 2px solid #ddd; /* optional: border around the logo */
+.viewLink:hover {
+  color: #c8f135;
+  border-color: rgba(200, 241, 53, 0.35);
+  background: rgba(200, 241, 53, 0.06);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    flex-wrap: wrap;
+  }
+  .viewLink {
+    width: 100%;
+    justify-content: center;
+  }
 }
