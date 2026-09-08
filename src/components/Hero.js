@@ -12,6 +12,7 @@ const ROLES = [
   "Java · Spring Boot",
   "GraphQL & REST APIs",
   "Distributed Systems",
+  "AI · RAG · MCP",
 ];
 
 export default function Hero() {
