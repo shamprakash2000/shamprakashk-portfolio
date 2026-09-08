@@ -8,7 +8,9 @@ import {
   SiPostman, SiBruno, SiIntellijidea,
   SiPostgresql, SiGooglecloud, SiApachemaven,
   SiOpenapiinitiative, SiGithub, SiClaude, SiGithubcopilot,
+  SiGooglegemini,
 } from "react-icons/si";
+import { FaRobot, FaDatabase } from "react-icons/fa";
 import { GrGraphQl } from "react-icons/gr";
 import { GiHoneycomb } from "react-icons/gi";
 import { VscVscode } from "react-icons/vsc";
@@ -25,13 +27,13 @@ const data = {
   name: "Sham Prakash K",
   role: "Backend Engineer",
   tagline: "Backend Engineer · Building systems that scale",
-  heroBio: "4 years building distributed systems that scale. Java · Spring Boot · GraphQL · REST APIs. Currently at American Express Global Business Travel.",
+  heroBio: "4 years building distributed systems that scale. Java · Spring Boot · GraphQL · REST APIs. Exploring AI engineering — RAG pipelines, MCP servers, and Spring AI. Currently at American Express Global Business Travel.",
   about_full:
     "Backend Engineer with 4 years of experience building distributed systems that scale. Currently at American Express Global Business Travel, working on enterprise travel technology. Previously at HashedIn by Deloitte, I designed and optimized backend systems handling 30M+ requests/day using Java, Spring Boot, GraphQL, and REST APIs — improving performance by 80% and leading a team of engineers.",
   aboutMe:
     "I'm a Backend Engineer who thrives on building systems that are fast, reliable, and ready to scale. Over 4 years, I've worked on everything from migrating monolithic platforms to microservices to designing GraphQL and REST APIs that serve millions of requests daily. I genuinely care about the craft — squeezing latency, eliminating failure modes, and writing code that a future engineer will thank you for.",
   aboutMe2:
-    "Outside of engineering, I'm curious about personal finance and the intersection of technology and capital markets. I believe the best systems are invisible — you only notice them when they break, and ideally, they don't.",
+    "Lately I've been deep in AI engineering — building RAG pipelines with Pinecone vector search, tool-calling agents, and MCP servers using Spring AI and the Gemini API. I believe AI will fundamentally reshape how backend systems are designed, and I want to be someone who builds those systems, not just uses them.",
   location: "Bangalore, India",
   image: image_profile,
   resume:
@@ -185,6 +187,11 @@ const data = {
     { name: "HoneyComb", icon: <GiHoneycomb />, category: "Testing & Obs." },
     { name: "Grafana", icon: <SiGrafana />, category: "Testing & Obs." },
     { name: "Splunk", icon: <SiSplunk />, category: "Testing & Obs." },
+    { name: "Spring AI", icon: <BiLogoSpringBoot />, category: "AI & ML" },
+    { name: "Gemini API", icon: <SiGooglegemini />, category: "AI & ML" },
+    { name: "Pinecone", icon: <FaDatabase />, category: "AI & ML" },
+    { name: "RAG / LLM", icon: <FaRobot />, category: "AI & ML" },
+    { name: "MCP", icon: <FaRobot />, category: "AI & ML" },
     { name: "Postman", icon: <SiPostman />, category: "Tools" },
     { name: "Bruno", icon: <SiBruno />, category: "Tools" },
     { name: "Maven", icon: <SiApachemaven />, category: "Tools" },
@@ -194,6 +201,40 @@ const data = {
     { name: "Copilot", icon: <SiGithubcopilot />, category: "Tools" },
   ],
   projects: [
+    {
+      title: "Gemini Chat",
+      subtitle: "AI Backend Learning Project — Phase by Phase",
+      description:
+        "Spring Boot app exploring AI backend development end-to-end — plain HTTP chat, Spring AI integration, RAG pipelines with Pinecone vector search, persistent conversation memory, tool-calling agents, and MCP server connectivity. Deployed live on Render.",
+      tags: ["Java", "Spring Boot", "Spring AI", "Gemini", "Pinecone", "PostgreSQL"],
+      code: "https://github.com/shamprakash2000/gemini-chat",
+      featured: true,
+    },
+    {
+      title: "Gemini Knowledge MCP Server",
+      subtitle: "RAG + Database Knowledge Server over MCP",
+      description:
+        "Spring Boot MCP server exposing RAG (document ingestion + Pinecone vector search) and database query tools to any LLM host. Documents are chunked, embedded via Gemini API, and retrieved by semantic similarity — no chat model inside the server.",
+      tags: ["Java", "Spring Boot", "Spring AI", "MCP", "RAG", "Pinecone", "Gemini"],
+      code: "https://github.com/shamprakash2000/gemini-knowledge-mcp-server",
+      featured: true,
+    },
+    {
+      title: "Gemini Chat UI",
+      subtitle: "React Frontend for Gemini Chat",
+      description:
+        "React + TypeScript + Vite frontend built to interact with the Gemini Chat backend. Clean chat interface consuming the Spring AI REST APIs with real-time conversation support.",
+      tags: ["React", "TypeScript", "Vite"],
+      code: "https://github.com/shamprakash2000/gemini-chat-ui",
+    },
+    {
+      title: "Gemini MCP Server",
+      subtitle: "Model Context Protocol Database Tool Server",
+      description:
+        "Standalone Spring Boot app exposing database query tools over MCP/SSE. LLM-agnostic — connects to Claude Desktop, Cursor, or any MCP host. Enforces SELECT-only safety, row caps, and table allowlists.",
+      tags: ["Java", "Spring Boot", "Spring AI", "MCP", "PostgreSQL"],
+      code: "https://github.com/shamprakash2000/gemini-mcp-server",
+    },
     {
       title: "Vercel Clone",
       subtitle: "Integrated System for Deployment",
