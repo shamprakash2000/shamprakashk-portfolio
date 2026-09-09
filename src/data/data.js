@@ -37,7 +37,7 @@ const data = {
   location: "Bangalore, India",
   image: image_profile,
   resume:
-    "https://drive.google.com/file/d/1cFxVH7EZGSqhXkVWIKuEV_OcKKBzNxqk/view?usp=drivesdk",
+    "https://drive.google.com/file/d/1Qhr0E7UbFUvIGwM9bc5ExCqTVzNkj3rW/view?usp=drivesdk",
   stats: [
     { value: "4+", label: "Years Experience" },
     { value: "30M+", label: "Requests / Day" },
