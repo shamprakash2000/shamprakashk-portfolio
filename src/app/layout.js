@@ -91,6 +91,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/shamprakashk-portfolio/favicon.svg" type="image/svg+xml" />
+        <link rel="shortcut icon" href="/shamprakashk-portfolio/favicon.svg" />
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
