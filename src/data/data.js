@@ -202,30 +202,30 @@ const data = {
   ],
   projects: [
     {
-      title: "Gemini Chat",
+      title: "DataPilot",
       subtitle: "AI Backend Learning Project — Phase by Phase",
       description:
         "Spring Boot app exploring AI backend development end-to-end — plain HTTP chat, Spring AI integration, RAG pipelines with Pinecone vector search, persistent conversation memory, tool-calling agents, and MCP server connectivity. Deployed live on Render.",
       tags: ["Java", "Spring Boot", "Spring AI", "Gemini", "Pinecone", "PostgreSQL"],
-      code: "https://github.com/shamprakash2000/gemini-chat",
+      code: "https://github.com/shamprakash2000/datapilot",
       featured: true,
     },
     {
-      title: "Gemini Knowledge MCP Server",
+      title: "DataPilot MCP",
       subtitle: "RAG + Database Knowledge Server over MCP",
       description:
         "Spring Boot MCP server exposing RAG (document ingestion + Pinecone vector search) and database query tools to any LLM host. Documents are chunked, embedded via Gemini API, and retrieved by semantic similarity — no chat model inside the server.",
       tags: ["Java", "Spring Boot", "Spring AI", "MCP", "RAG", "Pinecone", "Gemini"],
-      code: "https://github.com/shamprakash2000/gemini-knowledge-mcp-server",
+      code: "https://github.com/shamprakash2000/datapilot-mcp",
       featured: true,
     },
     {
-      title: "Gemini Chat UI",
-      subtitle: "React Frontend for Gemini Chat",
+      title: "DataPilot UI",
+      subtitle: "React Frontend for DataPilot",
       description:
-        "React + TypeScript + Vite frontend built to interact with the Gemini Chat backend. Clean chat interface consuming the Spring AI REST APIs with real-time conversation support.",
+        "React + TypeScript + Vite frontend built to interact with the DataPilot backend. Clean chat interface consuming the Spring AI REST APIs with real-time conversation support.",
       tags: ["React", "TypeScript", "Vite"],
-      code: "https://github.com/shamprakash2000/gemini-chat-ui",
+      code: "https://github.com/shamprakash2000/datapilot-ui",
     },
     {
       title: "Gemini MCP Server",
