@@ -1,8 +1,18 @@
+import { Poppins } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
+  variable: "--font-poppins",
+});
+
 const BASE_URL = "https://shamprakash2000.github.io/shamprakashk-portfolio";
+const GA_ID = "G-TGQGMRSXVD";
 
 export const metadata = {
   metadataBase: new URL(BASE_URL),
@@ -26,9 +36,9 @@ export const metadata = {
     siteName: "Sham Prakash K — Portfolio",
     images: [
       {
-        url: `${BASE_URL}/images/Sham.png`,
-        width: 400,
-        height: 400,
+        url: `${BASE_URL}/images/og-banner.png`,
+        width: 1200,
+        height: 630,
         alt: "Sham Prakash K — Backend Engineer",
       },
     ],
@@ -39,8 +49,7 @@ export const metadata = {
     title: "Sham Prakash K | Backend Engineer",
     description:
       "4+ years building distributed systems — Java, Spring Boot, GraphQL, REST APIs, Spring AI, and MCP servers.",
-    images: [`${BASE_URL}/images/Sham.png`],
-    creator: "@shamprakash",
+    images: [`${BASE_URL}/images/og-banner.png`],
   },
   robots: {
     index: true,
@@ -85,32 +94,26 @@ const jsonLd = {
   },
 };
 
-const GA_ID = "G-TGQGMRSXVD";
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/shamprakashk-portfolio/favicon.svg" type="image/svg+xml" />
-        <link rel="shortcut icon" href="/shamprakashk-portfolio/favicon.svg" />
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${GA_ID}');`,
-          }}
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>
+      <body className={poppins.className}>
         <Header />
         {children}
         <Footer />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga-init" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${GA_ID}');`}
+        </Script>
       </body>
     </html>
   );

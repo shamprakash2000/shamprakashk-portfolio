@@ -8,7 +8,7 @@ import {
   SiPostman, SiBruno, SiIntellijidea,
   SiPostgresql, SiGooglecloud, SiApachemaven,
   SiOpenapiinitiative, SiGithub, SiClaude, SiGithubcopilot,
-  SiGooglegemini,
+  SiGooglegemini, SiExpress, SiApachecassandra, SiJenkins,
 } from "react-icons/si";
 import { FaRobot, FaDatabase } from "react-icons/fa";
 import { GrGraphQl } from "react-icons/gr";
@@ -27,9 +27,9 @@ const data = {
   name: "Sham Prakash K",
   role: "Backend Engineer",
   tagline: "Backend Engineer · Building systems that scale",
-  heroBio: "4 years building distributed systems that scale. Java · Spring Boot · GraphQL · REST APIs. Exploring AI engineering — RAG pipelines, MCP servers, and Spring AI. Currently at American Express Global Business Travel.",
+  heroBio: "4+ years building distributed systems that scale. Java · Spring Boot · GraphQL · REST APIs. Exploring AI engineering — RAG pipelines, MCP servers, and Spring AI. Currently at American Express Global Business Travel.",
   about_full:
-    "Backend Engineer with 4 years of experience building distributed systems that scale. Currently at American Express Global Business Travel, working on enterprise travel technology. Previously at HashedIn by Deloitte, I designed and optimized backend systems handling 30M+ requests/day using Java, Spring Boot, GraphQL, and REST APIs — improving performance by 80% and leading a team of engineers.",
+    "Backend Engineer with 4+ years of experience building distributed systems that scale. Currently at American Express Global Business Travel, working on enterprise travel technology. Previously at HashedIn by Deloitte, I designed and optimized backend systems handling 30M+ requests/day using Java, Spring Boot, GraphQL, and REST APIs — improving performance by 80% and leading a team of engineers.",
   aboutMe:
     "I'm a Backend Engineer who thrives on building systems that are fast, reliable, and ready to scale. Over 4 years, I've worked on everything from migrating monolithic platforms to microservices to designing GraphQL and REST APIs that serve millions of requests daily. I genuinely care about the craft — squeezing latency, eliminating failure modes, and writing code that a future engineer will thank you for.",
   aboutMe2:
@@ -63,14 +63,16 @@ const data = {
     {
       company: "American Express Global Business Travel",
       shortName: "Amex GBT",
-      location: "Bangalore, India",
-      title: "Engineer I Full Stack Developer",
+      location: "Domlur, Bangalore",
+      title: "Engineer I (P1 Band)",
       period: "May 2026 – Present",
       current: true,
       items: [
-        "Developing and maintaining backend services for enterprise-scale global business travel platforms serving corporate clients worldwide.",
-        "Building high-availability, distributed systems using modern backend technologies within cross-functional agile teams.",
-        "Contributing to the reliability, scalability, and performance of mission-critical travel management software.",
+        "Architected and developed a new Java Spring Boot microservice from the ground up — owning service architecture, REST APIs, business logic, fault tolerance, and downstream integrations for a new read workflow.",
+        "Designed and optimized a high-volume read microservice supporting 5–10 lakh lookups/day using Cassandra query optimization, pagination, batched multi-table retrieval, and caching — cutting latency by 50% with p95 below 20ms.",
+        "Built and enhanced data-enrichment services processing 2–4 lakh records/day, primarily enriching rail data to improve data completeness and enable richer travel information.",
+        "Designed and implemented a new data-enrichment solution replacing an existing company-specific capability, expanding coverage with additional data points across client data available through GBT.",
+        "Developed scalable JSON/XML data-processing workflows for validation, transformation, mapping, and enrichment, supporting enterprise client onboarding and evolving integration requirements.",
       ],
     },
     {
@@ -170,18 +172,21 @@ const data = {
     { name: "JavaScript", icon: <FaJs />, category: "Languages" },
     { name: "Spring Boot", icon: <BiLogoSpringBoot />, category: "Frameworks" },
     { name: "Node.js", icon: <FaNodeJs />, category: "Frameworks" },
+    { name: "Express.js", icon: <SiExpress />, category: "Frameworks" },
     { name: "GraphQL", icon: <GrGraphQl />, category: "Frameworks" },
     { name: "REST APIs", icon: <SiOpenapiinitiative />, category: "Frameworks" },
     { name: "React", icon: <FaReact />, category: "Frameworks" },
     { name: "MySQL", icon: <DiMysql />, category: "Databases" },
     { name: "PostgreSQL", icon: <SiPostgresql />, category: "Databases" },
     { name: "MongoDB", icon: <SiMongodb />, category: "Databases" },
+    { name: "Cassandra", icon: <SiApachecassandra />, category: "Databases" },
     { name: "Redis", icon: <DiRedis />, category: "Databases" },
     { name: "AWS", icon: <FaAws />, category: "Cloud & DevOps" },
     { name: "GCP", icon: <SiGooglecloud />, category: "Cloud & DevOps" },
     { name: "Git", icon: <FaGit />, category: "Cloud & DevOps" },
     { name: "GitHub", icon: <SiGithub />, category: "Cloud & DevOps" },
     { name: "BitBucket", icon: <FaBitbucket />, category: "Cloud & DevOps" },
+    { name: "Jenkins", icon: <SiJenkins />, category: "Cloud & DevOps" },
     { name: "JUnit", icon: <SiJunit5 />, category: "Testing & Obs." },
     { name: "Mockito", icon: <FaFlask />, category: "Testing & Obs." },
     { name: "HoneyComb", icon: <GiHoneycomb />, category: "Testing & Obs." },
@@ -203,11 +208,12 @@ const data = {
   projects: [
     {
       title: "DataPilot",
-      subtitle: "AI Backend Learning Project — Phase by Phase",
+      subtitle: "Ask questions, get answers — from documents and databases",
       description:
-        "Spring Boot app exploring AI backend development end-to-end — plain HTTP chat, Spring AI integration, RAG pipelines with Pinecone vector search, persistent conversation memory, tool-calling agents, and MCP server connectivity. Deployed live on Render.",
-      tags: ["Java", "Spring Boot", "Spring AI", "Gemini", "Pinecone", "PostgreSQL"],
+        "AI backend with RAG pipelines, ReAct agents, and MCP tool integration — enabling natural language to SQL with safety guardrails, semantic document search via Pinecone, persistent memory in PostgreSQL, and real-time SSE streaming, all exposed as a standalone MCP server.",
+      tags: ["Java", "Spring Boot", "Spring AI", "RAG", "Pinecone", "MCP", "ReAct Agents"],
       code: "https://github.com/shamprakash2000/datapilot",
+      demo: "https://datapilot-ui.onrender.com/",
       featured: true,
     },
     {

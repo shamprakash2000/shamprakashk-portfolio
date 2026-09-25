@@ -14,11 +14,14 @@ function getSuffix(str) {
 }
 
 function CountUp({ value }) {
-  const [display, setDisplay] = useState("0");
-  const ref = useRef(null);
-  const started = useRef(false);
   const num = parseValue(value);
   const suffix = getSuffix(value);
+  const initialDisplay = num !== null
+    ? (Number.isInteger(num) ? String(Math.round(num)) : num.toFixed(1))
+    : value;
+  const [display, setDisplay] = useState(initialDisplay);
+  const ref = useRef(null);
+  const started = useRef(false);
 
   useEffect(() => {
     if (num === null) { setDisplay(value); return; }
