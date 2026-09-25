@@ -31,6 +31,7 @@ export default function Footer() {
               <Link
                 href={data.socialLinks.github}
                 target="_blank"
+                rel="noopener noreferrer"
                 className={styles.socialLink}
                 aria-label="GitHub"
               >
@@ -39,6 +40,7 @@ export default function Footer() {
               <Link
                 href={data.socialLinks.linkedin}
                 target="_blank"
+                rel="noopener noreferrer"
                 className={styles.socialLink}
                 aria-label="LinkedIn"
               >
