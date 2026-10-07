@@ -16,7 +16,7 @@ export default function ScrollProgress() {
 
   return (
     <div style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "3px", zIndex: 9999, pointerEvents: "none" }}>
-      <div style={{ height: "100%", width: `${progress}%`, background: "#c8f135", transition: "width 0.1s linear" }} />
+      <div style={{ height: "100%", width: `${progress}%`, background: "var(--accent)", transition: "width 0.1s linear" }} />
     </div>
   );
 }

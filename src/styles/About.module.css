@@ -10,7 +10,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(200, 241, 53, 0.15), transparent);
+  background: linear-gradient(90deg, transparent, rgba(var(--accent-rgb), 0.15), transparent);
 }
 .about::before { top: 0; }
 .about::after { bottom: 0; }
@@ -51,15 +51,15 @@
 }
 
 .statCard:hover {
-  border-color: rgba(200, 241, 53, 0.3);
-  box-shadow: 0 4px 24px rgba(200, 241, 53, 0.07);
+  border-color: rgba(var(--accent-rgb), 0.3);
+  box-shadow: 0 4px 24px rgba(var(--accent-rgb), 0.07);
   transform: translateY(-3px);
 }
 
 .statNumber {
   font-size: 2.1rem;
   font-weight: 800;
-  color: #c8f135;
+  color: var(--accent-text);
   line-height: 1.1;
   margin-bottom: 0.5rem;
 }
