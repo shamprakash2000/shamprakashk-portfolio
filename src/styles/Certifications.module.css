@@ -26,8 +26,8 @@
 }
 
 .card:hover {
-  border-color: rgba(200, 241, 53, 0.25);
-  box-shadow: 0 6px 28px rgba(200, 241, 53, 0.06);
+  border-color: rgba(var(--accent-rgb), 0.25);
+  box-shadow: 0 6px 28px rgba(var(--accent-rgb), 0.06);
   transform: translateY(-3px);
 }
 
@@ -36,7 +36,7 @@
   height: 52px;
   border-radius: 12px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--pill-bg);
   border: 1px solid var(--border);
   display: flex;
   align-items: center;
@@ -84,20 +84,20 @@
 }
 
 .levelPro {
-  background: rgba(200, 241, 53, 0.12);
-  border: 1px solid rgba(200, 241, 53, 0.3);
-  color: #c8f135;
+  background: rgba(var(--accent-rgb), 0.12);
+  border: 1px solid rgba(var(--accent-rgb), 0.3);
+  color: var(--accent-text);
 }
 
 .levelAssoc {
   background: rgba(96, 165, 250, 0.1);
   border: 1px solid rgba(96, 165, 250, 0.25);
-  color: #60a5fa;
+  color: var(--info-text);
 }
 
 .org {
   font-size: 0.8rem;
-  color: #c8f135;
+  color: var(--accent-text);
   font-weight: 500;
   margin-bottom: 0.18rem;
 }
@@ -125,9 +125,9 @@
 }
 
 .viewLink:hover {
-  color: #c8f135;
-  border-color: rgba(200, 241, 53, 0.35);
-  background: rgba(200, 241, 53, 0.06);
+  color: var(--accent-text);
+  border-color: rgba(var(--accent-rgb), 0.35);
+  background: rgba(var(--accent-rgb), 0.06);
 }
 
 @media (max-width: 768px) {

@@ -21,7 +21,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: #c8f135;
+  color: var(--accent-text);
   margin-bottom: 0.9rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--border);
@@ -46,22 +46,22 @@
 }
 
 .skillCard:hover {
-  border-color: rgba(200, 241, 53, 0.4);
-  background: rgba(200, 241, 53, 0.05);
+  border-color: rgba(var(--accent-rgb), 0.4);
+  background: rgba(var(--accent-rgb), 0.05);
   transform: translateY(-2px);
-  box-shadow: 0 4px 18px rgba(200, 241, 53, 0.08);
+  box-shadow: 0 4px 18px rgba(var(--accent-rgb), 0.08);
 }
 
 .icon {
   font-size: 1.25rem;
-  color: #525252;
+  color: var(--text-3);
   display: flex;
   align-items: center;
   transition: color 0.25s ease;
 }
 
 .skillCard:hover .icon {
-  color: #c8f135;
+  color: var(--accent-text);
 }
 
 .name {

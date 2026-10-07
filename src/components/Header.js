@@ -9,6 +9,18 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("Home");
   const [progress, setProgress] = useState(0);
+  const [theme, setTheme] = useState("dark");
+
+  useEffect(() => {
+    setTheme(document.documentElement.dataset.theme === "light" ? "light" : "dark");
+  }, []);
+
+  const toggleTheme = () => {
+    const next = theme === "light" ? "dark" : "light";
+    setTheme(next);
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem("theme", next); } catch {}
+  };
 
   useEffect(() => {
     const handler = () => {
@@ -62,9 +74,23 @@ export default function Header() {
           ))}
         </nav>
 
-        <Link href={data.socialLinks.sendMail} className={styles.hireBtn}>
-          Hire me →
-        </Link>
+        <div className={styles.actions}>
+          <button
+            className={styles.themeBtn}
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
+            title={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
+          >
+            {theme === "light" ? (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg>
+            ) : (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
+            )}
+          </button>
+          <Link href={data.socialLinks.sendMail} className={styles.hireBtn}>
+            Hire me →
+          </Link>
+        </div>
 
         <button
           className={styles.menuBtn}
@@ -96,7 +122,7 @@ export default function Header() {
 
       {/* Scroll progress bar — sits at the bottom edge of the sticky header */}
       <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "2px", pointerEvents: "none" }}>
-        <div style={{ height: "100%", width: `${progress}%`, background: "#c8f135", transition: "width 0.15s linear" }} />
+        <div style={{ height: "100%", width: `${progress}%`, background: "var(--accent)", transition: "width 0.15s linear" }} />
       </div>
     </header>
   );
